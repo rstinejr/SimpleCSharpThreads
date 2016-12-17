@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApplication
+namespace Waltonstine.Example.CSharp.Threads
 {
     public class Program
     {
