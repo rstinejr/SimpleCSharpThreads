@@ -54,3 +54,8 @@ If you play with this code a bit, you will see that an unhandled exception in th
 worker thread will cause the program to crash, but you cannot catch the 
 worker thread's exception in the main thread.  The catch-block needs to be 
 run from the worker thread if the exception is to be caught.
+
+Note that the Thread class in .NET Core does not have an *Abort* or *Interrupt*
+method. Microsoft has always said that it's a bad idea to kill or interrupt 
+a thread, since the calling method has no idea what the child thread is up to.
+With .NET Core, they took away this opportunity to shoot yourself in the foot.
