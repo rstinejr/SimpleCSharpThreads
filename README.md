@@ -5,7 +5,7 @@ Simple example of threads with a mutex.
 Have interactive option of causing thread to throw an exception.
 
 Created on Windows 10, using dotnet version 1.0.0-preview2-003131 and
-VisualStudio 2015 release 3.
+VisualStudio 2015 release 3. Later updated to dotnet 1.1.0 and VisualStudio 2017.
 
 See http://dot.net for help installing .NET Core on Windows, Mac OSX, or Linux.
 

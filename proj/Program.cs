@@ -52,15 +52,16 @@ namespace Waltonstine.Example.CSharp.Threads
         {
             Console.WriteLine($"Main thread {Thread.CurrentThread.ManagedThreadId}, create a worker thread.");
             Mutex mutx = new Mutex();
-            mutx.WaitOne();
 
             Worker worker = new Worker(mutx);
             Thread t = new Thread(new ThreadStart(worker.DoSomeWork));
 
             Console.WriteLine("Start thread");
+            mutx.WaitOne();
             t.Start();
 
-            Thread.Sleep(10);
+            Thread.Sleep(10);  // Thread.Yield() is not part of .NET Core.
+
             Console.Write("Press 'x' to throw exception in thread, any other key to continue: ");
             ConsoleKeyInfo ki = Console.ReadKey();
             Console.WriteLine();
